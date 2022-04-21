@@ -41,12 +41,14 @@ function App() {
     })
   }
 
+  const correctWord = "RIGHT";
+
   return (
     <div className="App">
       <nav>
         <h1>Wordle</h1>
       </nav>
-      <AppContext.Provider value={{ board, setBoard, currAttempt, setCurrAttempt, onSelect, onDelete, onEnter }}>
+      <AppContext.Provider value={{ board, setBoard, currAttempt, setCurrAttempt, onSelect, onDelete, onEnter, correctWord }}>
         <div className="game">
           <Board />
           <Keyboard />
