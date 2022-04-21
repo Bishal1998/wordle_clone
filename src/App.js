@@ -11,14 +11,15 @@ function App() {
   const [board, setBoard] = useState(Words);
   const [currAttempt, setCurrAttempt] = useState({ attempt: 0, letterPos: 0 });
 
-  const onSelect = () => {
+  const onEnter = () => {
+    // console.log('asjhdfks')
     if (currAttempt.letterPos !== 5) return;
     setCurrAttempt((init) => {
       return ({ attempt: init.attempt + 1, letterPos: 0 })
     })
   }
 
-  const onDelete = (keyVal) => {
+  const onSelect = (keyVal) => {
     if (currAttempt.letterPos > 4) return;
     const newBoard = [...board];
     newBoard[currAttempt.attempt][currAttempt.letterPos] = keyVal;
@@ -30,7 +31,7 @@ function App() {
     )
   }
 
-  const onEnter = () => {
+  const onDelete = () => {
     if (currAttempt.letterPos === 0) return;
     const newBoard = [...board];
     newBoard[currAttempt.attempt][currAttempt.letterPos - 1] = '';
